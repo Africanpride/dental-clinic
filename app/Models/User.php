@@ -17,12 +17,12 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = ['firstName','lastName','email', 'acceptMarketing','password'];
 
+    // public function getAcceptMarketingAttribute($value)
+    // {
+    //     return $value == 1 ? true : false;
+    // }
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -40,5 +40,10 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'acceptMarketing' => 'boolean'
     ];
+
+    public function getFullNameAttribute() {
+        return ucfirst($this->firstName) . ' ' . ucfirst($this->lastName);
+    }
 }
