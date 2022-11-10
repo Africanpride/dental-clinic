@@ -42,13 +42,13 @@ class RegisteredUserController extends Controller
         ]);
 
         // $acceptMarketing = (bool)'';
-        $request->has('acceptMarketing') ? $acceptMarketing = true : $acceptMarketing = false;
+
 
         $user = User::create([
             'firstName' => $request->firstName,
             'lastName' => $request->lastName,
             'email' => $request->email,
-            'acceptMarketing' => $acceptMarketing,
+            'acceptMarketing' => ($request->has('acceptMarketing') ?  true : false),
             'password' => Hash::make($request->password),
         ]);
 

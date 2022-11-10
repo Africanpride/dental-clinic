@@ -63,7 +63,7 @@
 
             </div>
 
-            <div class="col-span-6 my-10">
+            <div class="col-span-6 my-5">
                 <label for="acceptMarketing" class="flex gap-4">
                     <input type="checkbox" id="acceptMarketing" name="acceptMarketing" value="1"
                         class="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm" />
@@ -75,9 +75,9 @@
                 </label>
             </div>
 
-            <div class="flex items-center justify-start mt-4 space-x-4">
+            <div class="flex flex-col items-center justify-start  space-x-4 space-y-4">
                 <button
-                class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-2  text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500 ">
+                class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 w-full px-12 py-2  text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500 ">
                     {{ __('Register') }}
                 </button>
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">

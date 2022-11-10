@@ -8,13 +8,17 @@ module.exports = {
         './resources/views/**/*.blade.php',
     ],
 
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-            },
-        },
-    },
+    daisyui: {
+        // themes: ["lofi" ],
+        styled: true,
+        themes: true,
+        base: true,
+        utils: true,
+        logs: true,
+        rtl: false,
+        prefix: "",
+        darkTheme: "dark",
+      },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [require('daisyui'),require('@tailwindcss/forms')],
 };
