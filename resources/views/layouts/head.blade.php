@@ -9,19 +9,23 @@
     {{-- <link type="image/png" sizes="16x16" rel="icon" href=".../icons8-bookmark-16.png"> --}}
     <link rel="icon" href="{{ asset('/images/favicon/favicon.ico') }}" type="image/gif" sizes="64x64">
 
-    {{-- <link rel="shortcut icon" href="https://www.youtube.com/s/desktop/233efd8f/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://www.youtube.com/s/desktop/233efd8f/img/favicon_32x32.png" sizes="32x32">
-    <link rel="icon" href="https://www.youtube.com/s/desktop/233efd8f/img/favicon_48x48.png" sizes="48x48">
-    <link rel="icon" href="https://www.youtube.com/s/desktop/233efd8f/img/favicon_96x96.png" sizes="96x96">
-    <link rel="icon" href="https://www.youtube.com/s/desktop/233efd8f/img/favicon_144x144.png" sizes="144x144"> --}}
-
-
     <title>{{ config('app.name', 'The Non-Stop Series') }}</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+    {{-- <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+
+    <link rel="stylesheet" href="{{ asset('/build/assets/app.54234ff0.css') }}">
+    <script type="module" src="{{ asset('/build/assets/app.d426e523.js') }}"></script> --}}
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
+    {{-- @php
+        $manifest = json_decode(file_get_contents('../public/build/manifest.json'), true);
+    @endphp
+    <script type="module" src="/build/{$manifest['resources/js/app.js']['file']}"></script>
+    <link rel="stylesheet" href="/build/{$manifest['resources/js/app.js']['css'][0]}"> --}}
+
     @livewireStyles
 
 </head>

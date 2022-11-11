@@ -9,7 +9,7 @@
                 @include('layouts.topbar')
             </div>
 
-            <div class="px-4">
+            <div class="px-4 py-4">
                 {{ $slot }}
             </div>
             @include('layouts.footer')

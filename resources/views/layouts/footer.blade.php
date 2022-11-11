@@ -1,4 +1,4 @@
-<footer class=" bg-base-200 body-font">
+<footer class=" bg-base-200 body-font sticky top-[100vh]">
     <div class="container px-5 py-4 mx-auto flex items-center sm:flex-row flex-col">
       <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
         <x-application-logo class="w-10 h-10 fill-current " />

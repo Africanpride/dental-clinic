@@ -3,7 +3,9 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Profile;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,14 +13,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = ['firstName','lastName','email', 'acceptMarketing','password'];
+    protected $fillable = ['firstName','lastName','email', 'acceptMarketing','last_login_at','isActivated','last_login_ip','password'];
 
     // public function getAcceptMarketingAttribute($value)
     // {
@@ -46,5 +49,9 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function getFullNameAttribute() {
         return ucfirst($this->firstName) . ' ' . ucfirst($this->lastName);
+    }
+
+    public function profile() {
+        return $this->hasOne(Profile::class);
     }
 }
