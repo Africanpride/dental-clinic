@@ -30,6 +30,8 @@ class PermissionsDemoSeeder extends Seeder
             Permission::create(['name' => 'unpublish articles']);
 
             // create roles and assign existing permissions
+            $superAdmin= Role::create(['name' => 'super-admin']);
+
             $admin = Role::create(['name' => 'admin']);
 
             $admin->givePermissionTo('publish articles');
@@ -41,7 +43,6 @@ class PermissionsDemoSeeder extends Seeder
             $writer->givePermissionTo('delete articles');
 
 
-            $superAdmin= Role::create(['name' => 'super-admin']);
         }
 
 
